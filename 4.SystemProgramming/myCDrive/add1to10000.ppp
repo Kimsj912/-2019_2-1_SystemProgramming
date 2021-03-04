@@ -1,0 +1,34 @@
+.stack
+size = 3
+
+
+.code
+// sti maxCount 10000
+ldi 10000
+sta 0
+// sti sum 0
+ldi 0
+sta 1
+// sti count = 0
+ldi 1
+sta 2
+
+//sum+=count
+lda 1
+add 2
+sta 1
+
+//count++
+ldi 1
+add 2
+sta 2
+
+//if (maxCount>=count) go to loop
+cmp 0
+igz 6
+
+//print(sum)
+prt 1
+
+// exit
+halt
